@@ -1,0 +1,435 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fredoka', ui-rounded, system-ui, sans-serif;
+    --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    color: #3d241c;
+    background-color: #fdf7eb;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Festive Lantern Sway */
+@keyframes lantern-sway {
+  0%, 100% {
+    transform: rotate(-3.5deg);
+  }
+  50% {
+    transform: rotate(3.5deg);
+  }
+}
+
+@keyframes lantern-sway-alt {
+  0%, 100% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+/* Falling Petals */
+@keyframes petal-drift {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.78;
+  }
+  85% {
+    opacity: 0.72;
+  }
+  100% {
+    transform: translate3d(48px, 106vh, 0) rotate(260deg);
+    opacity: 0;
+  }
+}
+
+@keyframes petal-drift-left {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(-44px, 106vh, 0) rotate(-240deg);
+    opacity: 0;
+  }
+}
+
+/* Character Idle Animations */
+@keyframes kawaii-breathe {
+  0%, 100% {
+    transform: translateY(0px) scale(1, 1) rotate(-0.6deg);
+  }
+  50% {
+    transform: translateY(-4px) scale(0.988, 1.022) rotate(0.6deg);
+  }
+}
+
+@keyframes head-tilt-left {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes head-tilt-right {
+  0%, 100% {
+    transform: rotate(1.5deg);
+  }
+  50% {
+    transform: rotate(-2.5deg);
+  }
+}
+
+@keyframes ear-wiggle-l {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-6deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes ear-wiggle-r {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(6deg);
+  }
+  70% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes tail-wag-slow {
+  0%, 100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes tail-wag-fast {
+  0%, 100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes eye-blink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.08);
+  }
+}
+
+/* Pulling State */
+@keyframes pull-strain-left {
+  0%, 100% {
+    transform: translateX(-8px) rotate(-6deg) scale(1);
+  }
+  50% {
+    transform: translateX(-13px) rotate(-9deg) scale(0.985, 1.02);
+  }
+}
+
+@keyframes pull-strain-right {
+  0%, 100% {
+    transform: translateX(8px) rotate(6deg) scale(1);
+  }
+  50% {
+    transform: translateX(13px) rotate(9deg) scale(0.985, 1.02);
+  }
+}
+
+@keyframes scene-pull-tremble {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1.02, 0.985) rotate(0deg);
+  }
+  20% {
+    transform: translate(-4px, 1px) scale(1.035, 0.975) rotate(-1.2deg);
+  }
+  40% {
+    transform: translate(4px, -1px) scale(1.03, 0.98) rotate(1.2deg);
+  }
+  60% {
+    transform: translate(-3px, -1px) scale(1.04, 0.97) rotate(-1deg);
+  }
+  80% {
+    transform: translate(3px, 2px) scale(1.025, 0.98) rotate(1deg);
+  }
+}
+
+@keyframes cookie-tremble {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1.03);
+  }
+  20% {
+    transform: translate(-3px, 1px) rotate(-2.5deg) scale(1.05);
+  }
+  40% {
+    transform: translate(3px, -2px) rotate(2.5deg) scale(1.04);
+  }
+  60% {
+    transform: translate(-3px, -1px) rotate(-2deg) scale(1.06);
+  }
+  80% {
+    transform: translate(3px, 2px) rotate(2deg) scale(1.05);
+  }
+}
+
+@keyframes cookie-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1deg);
+  }
+}
+
+/* Happy Celebration Jump */
+@keyframes happy-pop-in {
+  0% {
+    transform: scale(0.84, 1.12) translateY(8px);
+    opacity: 0.75;
+  }
+  45% {
+    transform: scale(1.05, 0.95) translateY(-10px);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.98, 1.02) translateY(-2px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1) translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes happy-bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1, 1);
+  }
+  30% {
+    transform: translateY(-9px) scale(0.98, 1.03);
+  }
+  55% {
+    transform: translateY(0px) scale(1.025, 0.975);
+  }
+  75% {
+    transform: translateY(-4px) scale(0.992, 1.015);
+  }
+}
+
+@keyframes crack-pop {
+  0% {
+    transform: scale(0.4) rotate(-8deg);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1.16) rotate(3deg);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.98) rotate(-1deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes crumb-fly {
+  0% {
+    transform: translate(0, 0) scale(0.5) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 40px), var(--ty, -40px)) scale(1.1) rotate(var(--rot, 140deg));
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.22) rotate(22deg);
+    opacity: 1;
+  }
+}
+
+@keyframes paper-unfurl {
+  0% {
+    transform: scaleY(0.15) scaleX(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+}
+
+.anim-lantern-l {
+  transform-origin: top center;
+  animation: lantern-sway 4.4s ease-in-out infinite;
+}
+.anim-lantern-r {
+  transform-origin: top center;
+  animation: lantern-sway-alt 4.9s ease-in-out infinite;
+}
+.anim-breathe {
+  transform-origin: bottom center;
+  animation: kawaii-breathe 2.9s ease-in-out infinite;
+}
+.anim-scene-pull {
+  transform-origin: bottom center;
+  animation: scene-pull-tremble 0.16s linear infinite;
+}
+.anim-happy-pop {
+  transform-origin: bottom center;
+  animation: happy-pop-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards, happy-bounce 1.2s ease-in-out 0.45s infinite;
+}
+.anim-head-l {
+  transform-origin: 100px 128px;
+  animation: head-tilt-left 3.4s ease-in-out infinite;
+}
+.anim-head-r {
+  transform-origin: 100px 128px;
+  animation: head-tilt-right 3.6s ease-in-out infinite;
+}
+.anim-ear-l {
+  transform-origin: 55px 62px;
+  animation: ear-wiggle-l 3.2s ease-in-out infinite;
+}
+.anim-ear-r {
+  transform-origin: 145px 62px;
+  animation: ear-wiggle-r 3.2s ease-in-out infinite;
+}
+.anim-tail-slow-l {
+  transform-origin: 54px 175px;
+  animation: tail-wag-slow 1.6s ease-in-out infinite;
+}
+.anim-tail-slow-r {
+  transform-origin: 146px 175px;
+  animation: tail-wag-slow 1.6s ease-in-out infinite reverse;
+}
+.anim-tail-fast-l {
+  transform-origin: 54px 175px;
+  animation: tail-wag-fast 0.34s ease-in-out infinite;
+}
+.anim-tail-fast-r {
+  transform-origin: 146px 175px;
+  animation: tail-wag-fast 0.34s ease-in-out infinite reverse;
+}
+.anim-blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: eye-blink 3.8s ease-in-out infinite;
+}
+.anim-pull-l {
+  transform-origin: bottom center;
+  animation: pull-strain-left 0.24s ease-in-out infinite;
+}
+.anim-pull-r {
+  transform-origin: bottom center;
+  animation: pull-strain-right 0.24s ease-in-out infinite;
+}
+.anim-happy {
+  transform-origin: bottom center;
+  animation: happy-bounce 0.88s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.anim-cookie-idle {
+  animation: cookie-float 2.8s ease-in-out infinite;
+}
+.anim-cookie-tremble {
+  animation: cookie-tremble 0.14s linear infinite;
+}
+.anim-crack-pop {
+  animation: crack-pop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.anim-paper-unfurl {
+  transform-origin: top center;
+  animation: paper-unfurl 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.anim-sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sparkle-twinkle 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-lantern-l,
+  .anim-lantern-r,
+  .anim-breathe,
+  .anim-scene-pull,
+  .anim-happy-pop,
+  .anim-head-l,
+  .anim-head-r,
+  .anim-ear-l,
+  .anim-ear-r,
+  .anim-tail-slow-l,
+  .anim-tail-slow-r,
+  .anim-tail-fast-l,
+  .anim-tail-fast-r,
+  .anim-blink,
+  .anim-pull-l,
+  .anim-pull-r,
+  .anim-happy,
+  .anim-cookie-idle,
+  .anim-cookie-tremble,
+  .anim-sparkle {
+    animation: none !important;
+  }
+}

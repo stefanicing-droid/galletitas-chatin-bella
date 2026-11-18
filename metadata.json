@@ -1,0 +1,6 @@
+{
+  "name": "Las Galletitas de Chatin y Bella",
+  "description": "Aplicación web progresiva festiva con Chatin y Bella abriendo galletas de la fortuna con 200 frases, números de la suerte, audio sintetizado y personalización de personajes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
